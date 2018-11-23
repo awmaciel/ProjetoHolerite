@@ -1,0 +1,12 @@
+	    //Trust Executa esse trecho
+            string imgPath = @"caminho do zip\meuArquivo.zip";
+            // Converte arquivo em array de bytes  
+            byte[] byteData = System.IO.File.ReadAllBytes(imgPath);
+            //Converte array de byte em base64string  e retorna para indra o texto gerado
+            string imreBase64Data = Convert.ToBase64String(byteData);
+
+
+            // Indra executa esse trecho
+            byte[] base64EncodedBytes = System.Convert.FromBase64String(imreBase64Data);
+            //byte[] retorno = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+            File.WriteAllBytes(@"caminho do zip\meuArquivo.zip", base64EncodedBytes);
